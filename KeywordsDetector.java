@@ -24,15 +24,11 @@ public class KeywordsDetector {
 
         boolean check = false;
         for(int i = 0; i < sentences.length; i++){
-            sentences[i] = lowerCase(sentences[i]);
-            check = false;
-            String[] s = sentences[i].split(" ");
-
-            
+            sentences[i] = lowerCase(sentences[i]);           
 
             for(int j = 0; j < keywords.length; j++){
 
-                if(sentences[i].contains(keywords[j])){
+                if((lowerCase(sentences[i])).contains(keywords[j])){
                     System.out.println(sentences[i]);
                     break;
                 }
