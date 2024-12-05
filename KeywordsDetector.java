@@ -1,17 +1,17 @@
 public class KeywordsDetector {
     public static void main(String[] args) {
         String[] sentences = {
-            "Our product will transform the market",
-            "Programming is both painful and engaging",
-            "This has nothing to do with machine learning",
-            "We need to leverage our core competencies",
-            "Let's talk about data and algorithms",
-            "Chatbots are great but must be used carefully",
-            "This blockchain-based solution will disrupt the industry",
-            "The team showed great Synergy in the last project",
-            "Use simple words without hype and fluff",
-            "Our new technology presents a significant paradigm shift",
-            "Effective presentations must be clear, concise, and humble"
+            "Our product will transform the market", //true
+            "Programming is both painful and engaging", //false
+            "This has nothing to do with machine learning", //false
+            "We need to leverage our core competencies", //true
+            "Let's talk about data and algorithms", //false
+            "Chatbots are great but must be used carefully", //false
+            "This blockchain-based solution will disrupt the industry", //true
+            "The team showed great Synergy in the last project", //true
+            "Use simple words without hype and fluff", //false
+            "Our new technology presents a significant paradigm shift", //true
+            "Effective presentations must be clear, concise, and humble" // false
         };
         // Some keywords that typically signal bullshit contents in business presentations 
         String[] keywords = {"synergy", "disrupt", "leverage", "Paradigm", "transform"};
@@ -28,7 +28,7 @@ public class KeywordsDetector {
 
             for(int j = 0; j < keywords.length; j++){
 
-                if((lowerCase(sentences[i])).contains(keywords[j])){
+                if((lowerCase(sentences[i])).contains(lowerCase(keywords[j]))){
                     System.out.println(sentences[i]);
                     break;
                 }
